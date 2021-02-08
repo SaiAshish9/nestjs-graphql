@@ -9,6 +9,5 @@ type Query {
 
 type Mutation {
   createMessage(desc: String!): Message!
-  clear(): Message
 }
 

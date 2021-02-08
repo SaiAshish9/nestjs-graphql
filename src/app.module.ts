@@ -9,16 +9,14 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
+    GraphQLModule.forRoot({
+      typePaths: ['./**/*.graphql'],
+      resolverValidationOptions: {
+        requireResolversForAllFields: false,
+      },
+    }),
     TypeOrmModule.forRoot(typeOrmConfig),
     UsersModule,
-    GraphQLModule.forRoot({
-      typePaths:[
-        './**/*.graphql'
-      ],
-      resolverValidationOptions:{
-        requireResolversForAllFields:false,
-      }
-    }),
     MessagesModule,
   ],
   controllers: [AppController],

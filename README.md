@@ -82,6 +82,7 @@ use nestjs;
 
 GRANT ALL PRIVILEGES ON *.* TO 'saiashish'@'localhost';
 
+alter user 'saiashish'@'localhost' identified with mysql_native_password by 'saiashish';
 
 ```
 

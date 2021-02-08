@@ -24,9 +24,9 @@ export class MessagesResolver {
     return newMsg;
   }
 
-  @Mutation()
-  clear(){
-      this.msg=[];
-      return null
-  }
+  // @Mutation()
+  // clear(){
+  //     this.msg=[];
+  //     return null
+  // }
 }
