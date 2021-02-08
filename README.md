@@ -21,7 +21,7 @@ query A{
 
 mutation B{
   createMessage(desc:"abcd"){
-    id 
+    id
   }
 }
 
@@ -50,8 +50,45 @@ RUN npm run build
 CMD ["node","dist/main"]
 ```
 
+## ormconfig.json
+
 ```
-https://medium.com/@shaibenshimol/nestjs-and-mysql-in-10-minutes-711e02ec1dab 
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "saiashish",
+    "password": "saiashish",
+    "database": "nestjs",
+    "entities": ["src/**/**.entity{.ts,.js}"],
+    "synchronize": true
+  }
+```
+
+## MySql Integration
+
+```
+npm install --save @nestjs/typeorm typeorm mysql
+
+nest g module users
+nest g service users
+nest g controller users
+nest g class users/user.entity
+
+sudo mysql -u root -p
+
+create database nestjs;
+use nestjs;
+
+GRANT ALL PRIVILEGES ON *.* TO 'saiashish'@'localhost';
+
+
+```
+
+## Useful Stuff
+
+```
+https://medium.com/@shaibenshimol/nestjs-and-mysql-in-10-minutes-711e02ec1dab
 
 FROM node:12.13-alpine As development
 
