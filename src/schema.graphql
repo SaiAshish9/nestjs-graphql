@@ -3,11 +3,18 @@ type Message {
   desc: String!
 }
 
+type User {
+  id: Int!
+  fullName: String!
+  birthday: String!
+  isActive: Boolean!
+}
+
 type Query {
   messages: [Message]!
+  users: [User]!
 }
 
 type Mutation {
   createMessage(desc: String!): Message!
 }
-
